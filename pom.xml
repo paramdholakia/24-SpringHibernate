@@ -1,77 +1,122 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- This is the Project Object Model (POM) file for a Maven project.
+     It defines the project's dependencies, build configuration, and other metadata. -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<!-- The model version indicates which POM model version you're using -->
 	<modelVersion>4.0.0</modelVersion>
+
+	<!-- Parent Project Configuration -->
 	<parent>
+		<!-- Specifies the parent project from which this project inherits configurations -->
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>3.3.2</version>
-		<relativePath /> <!-- lookup parent from repository -->
+		<!-- The relative path to the parent project, but it's left empty because Maven will look it up in the repository -->
+		<relativePath /> 
 	</parent>
+
+	<!-- Project Identification -->
+	<!-- The groupId typically follows a reverse domain naming convention to uniquely identify your project -->
 	<groupId>SpringHibernate</groupId>
+	<!-- The artifactId is the name of the jar (without version) that will be created -->
 	<artifactId>SpringHibernate</artifactId>
+	<!-- The version of your project; "SNAPSHOT" indicates it's in development and not a final release -->
 	<version>0.0.1-SNAPSHOT</version>
+	<!-- The name of the project -->
 	<name>SpringHibernate</name>
+	<!-- A brief description of the project -->
 	<description>SpringHibernate</description>
+	<!-- Project URL (optional, left empty here) -->
 	<url />
+
+	<!-- License Information (optional, placeholder here) -->
 	<licenses>
 		<license />
 	</licenses>
+
+	<!-- Developer Information (optional, placeholder here) -->
 	<developers>
 		<developer />
 	</developers>
+
+	<!-- Source Control Management (SCM) Information (optional, placeholders here) -->
 	<scm>
 		<connection />
 		<developerConnection />
 		<tag />
 		<url />
 	</scm>
+
+	<!-- Properties -->
 	<properties>
+		<!-- Sets the Java version to be used for compiling the project -->
 		<java.version>17</java.version>
 	</properties>
+
+	<!-- Dependencies -->
 	<dependencies>
+		<!-- Spring Data JPA dependency for ORM support -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
+
+		<!-- Spring Web dependency for building web applications, including RESTful services -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+		<!-- Spring Boot DevTools dependency for developer-friendly features like hot reload -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
+			<!-- This dependency is only required at runtime, not for the final artifact -->
 			<scope>runtime</scope>
+			<!-- Optional means this dependency won't be included in the final artifact unless explicitly requested -->
 			<optional>true</optional>
 		</dependency>
+
+		<!-- MySQL Connector dependency to connect to a MySQL database -->
 		<dependency>
 			<groupId>com.mysql</groupId>
 			<artifactId>mysql-connector-j</artifactId>
+			<!-- This dependency is required only at runtime -->
 			<scope>runtime</scope>
 		</dependency>
+
+		<!-- Spring Boot Test dependency for testing the application -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
+			<!-- This dependency is only required in the test phase -->
 			<scope>test</scope>
 		</dependency>
+
+		<!-- Spring Data JDBC dependency for working with JDBC directly -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jdbc</artifactId>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-jasper -->
+		<!-- Apache Tomcat Jasper dependency for JSP support -->
+		<!-- This dependency is used to compile and run JSP files -->
 		<dependency>
 			<groupId>org.apache.tomcat</groupId>
 			<artifactId>tomcat-jasper</artifactId>
+			<!-- Specific version of Tomcat Jasper to use -->
 			<version>11.0.0-M24</version>
 		</dependency>
 
 	</dependencies>
 
+	<!-- Build Configuration -->
 	<build>
 		<plugins>
+			<!-- Spring Boot Maven Plugin for building and packaging Spring Boot applications -->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
