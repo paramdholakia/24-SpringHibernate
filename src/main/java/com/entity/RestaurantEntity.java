@@ -5,57 +5,29 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+// Annotation that marks this class as a JPA entity. This means it will be mapped to a database table.
 @Entity
+// Annotation that specifies the name of the database table that this entity will be mapped to.
+// Here, the table name is `restaurants`.
 @Table(name = "restaurants")
+
+// Lombok annotations to generate getters, setters, toString, equals, and hashCode methods.
+@Data
+// Lombok annotation to generate a no-argument constructor.
+@NoArgsConstructor
+// Lombok annotation to generate an all-arguments constructor.
+@AllArgsConstructor
 public class RestaurantEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int id;
-    String restaurantName;
-    String restaurantAddress;
-    String restaurantCategory;
+    private int id;  // This field represents the primary key of the restaurant entity.
 
-    public RestaurantEntity() {
-    }
-
-    public RestaurantEntity(int id, String restaurantName, String restaurantAddress, String restaurantCategory) {
-        this.id = id;
-        this.restaurantName = restaurantName;
-        this.restaurantAddress = restaurantAddress;
-        this.restaurantCategory = restaurantCategory;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getRestaurantName() {
-        return restaurantName;
-    }
-
-    public void setRestaurantName(String restaurantName) {
-        this.restaurantName = restaurantName;
-    }
-
-    public String getRestaurantAddress() {
-        return restaurantAddress;
-    }
-
-    public void setRestaurantAddress(String restaurantAddress) {
-        this.restaurantAddress = restaurantAddress;
-    }
-
-    public String getRestaurantCategory() {
-        return restaurantCategory;
-    }
-
-    public void setRestaurantCategory(String restaurantCategory) {
-        this.restaurantCategory = restaurantCategory;
-    }
+    private String restaurantName;
+    private String restaurantAddress;
+    private String restaurantCategory;
 }

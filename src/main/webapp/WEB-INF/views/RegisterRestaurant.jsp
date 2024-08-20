@@ -24,5 +24,8 @@
 		
 		<input type="submit" value="Save" />
 	</form>
+	
+	<a href="listRestaurants">View Restaurant List</a>
+	
 </body>
 </html>

@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	Restaurant Added Successfully
+	<h1>Restaurant Added Successfully</h1>
+	<a href="listRestaurants">View Restaurant List</a>
 </body>
 </html>
