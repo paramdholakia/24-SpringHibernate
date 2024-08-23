@@ -6,3 +6,6 @@ target
 HELP.md
 mvnw
 mvnw.cmd
+test
+.factorypath
+.gitignore
