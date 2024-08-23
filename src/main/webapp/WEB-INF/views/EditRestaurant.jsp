@@ -16,6 +16,7 @@
 				<td>Restaurant Name:</td>
 				<td><input type="text" name="restaurantName"
 					value="${restaurant.restaurantName}" /></td>
+
 			</tr>
 			<tr>
 				<td>Restaurant Address:</td>

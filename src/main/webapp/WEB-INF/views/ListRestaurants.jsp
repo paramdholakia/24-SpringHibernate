@@ -8,6 +8,15 @@
 <meta charset="ISO-8859-1">
 <title>Restaurant List</title>
 </head>
+
+
+<style>
+	a{
+		text-decoration: none;
+		color : black;
+	}
+</style>
+
 <body>
 	
 	<h1>Restaurant List</h1>
