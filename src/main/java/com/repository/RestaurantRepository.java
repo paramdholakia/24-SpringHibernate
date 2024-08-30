@@ -12,5 +12,4 @@ import com.entity.RestaurantEntity;
 @Repository
 public interface RestaurantRepository extends JpaRepository<RestaurantEntity, Integer> {
     // JpaRepository provides basic CRUD operations, no additional methods needed for basic functionality.
-
 }
